@@ -1,0 +1,19 @@
+<h1>here</h1>
+<main>
+    <aside class="sidebar">
+        <h1>Content Generator</h1>
+
+    </aside>
+    <section>
+        <div class="feed-wrapper">
+            <div *ngFor="let feed of rssFeeds" class="feed">
+                <div class="feed-header"><h3><a href="{{feed.link}}">{{feed.title}}</a></h3>{{feed.pubDate | date :'MMM dd yyyy | h:mm'}}</div>
+                <img src="#" />
+                <h3>{{feed.title}}</h3>
+                <p>{{feed.description}}</p>
+            </div>
+        </div>
+    </section>
+</main>
+<p>{{rssFeeds | json }}</p>
+

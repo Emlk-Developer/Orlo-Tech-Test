@@ -1,0 +1,28 @@
+main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 15px;
+    background-color: lightgray;
+
+    .sidebar {
+        background-color: gray;
+    }
+}
+.feed-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+
+    .feed {
+        max-width: 350px;
+        width: 100%;
+
+        .feed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: gray;
+            padding: 0 10px;
+        }
+    }
+}
