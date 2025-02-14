@@ -1,2 +1,8 @@
-<h2>{{title}}</h2>
-<app-feed-card></app-feed-card>
+<main>
+    <app-side-bar 
+        [categorySelection]="categorySelection" 
+        [filteredCategories]="filteredCategories" 
+    >
+    </app-side-bar>
+    <app-feed-card [rssFeedsInCategorySelection]="rssFeedsInCategorySelection" ></app-feed-card>
+</main>

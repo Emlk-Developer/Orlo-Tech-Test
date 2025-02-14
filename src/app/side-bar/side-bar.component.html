@@ -1,1 +1,21 @@
-<p>side-bar works!</p>
+<aside class="sidebar">
+    <h1>Content Generator</h1>
+    <section>
+        <input class="filter-input" [(ngModel)]="filteredValue" placeholder="Filter your feeds..." style="font-style:italic" />
+        <ul class="feed">
+            <li class="category-option" *ngFor="let category of filteredCategories | slice: 0: 10 ; let i = index" >
+                <div><span>{{category}}</span><button (click)="removeCategory(category)" class="remove-category-cta">X</button></div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="section-sidebar-bottom">
+        <h3>Add a new feed</h3>
+        <form (submit)="addFeed(feedName, feedUrl)">
+            <input [(ngModel)]="feedName" placeholder="Type your feed name..." name="feedName"/>
+            <input  [(ngModel)]="feedUrl" placeholder="Copy your RSS url..." name="feedUrl"/>
+            <button>Add feed</button>
+        </form>
+    </section>
+
+</aside>

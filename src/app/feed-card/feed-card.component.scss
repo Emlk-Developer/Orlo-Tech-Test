@@ -1,0 +1,51 @@
+.feed-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,(minmax(350px,1fr)));
+    gap: 15px;
+    
+    .feed {
+        width: 100%;
+        background-color: #fff;
+        height: fit-content;
+
+        .feed-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #808080;
+            padding: 0 24px;
+
+            h3 a {
+                color: #3f9dd4;
+                text-decoration: none;
+            }
+
+            span {
+                color: white;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .feed-content {
+            padding: 24px;
+            h2 {
+                font-weight: 300;
+                font-size: 28px;
+                margin-top: 0;
+            }
+
+            p {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical; 
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+        }
+
+    }
+}
