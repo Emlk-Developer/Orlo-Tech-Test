@@ -36,7 +36,13 @@
                 
                 span {    
                     flex: 1;
+                    text-transform: capitalize;
                 }
+            }
+
+            a {
+                text-decoration: none;
+                color: #fff;
             }
 
             .remove-category-cta {

@@ -3,8 +3,14 @@
     <section>
         <input class="filter-input" [(ngModel)]="filteredValue" placeholder="Filter your feeds..." style="font-style:italic" />
         <ul class="feed">
+            <!-- shows the first 10 categories -->
             <li class="category-option" *ngFor="let category of filteredCategories | slice: 0: 10 ; let i = index" >
                 <div><span>{{category}}</span><button (click)="removeCategory(category)" class="remove-category-cta">X</button></div>
+            </li>
+        </ul>
+        <ul class="feed">
+            <li class="category-option"  *ngFor="let feed of feeds">
+                <a href="{{feed.feedUrl}}">{{feed.feedName}}</a>
             </li>
         </ul>
     </section>
@@ -12,8 +18,8 @@
     <section class="section-sidebar-bottom">
         <h3>Add a new feed</h3>
         <form (submit)="addFeed(feedName, feedUrl)">
-            <input [(ngModel)]="feedName" placeholder="Type your feed name..." name="feedName"/>
-            <input  [(ngModel)]="feedUrl" placeholder="Copy your RSS url..." name="feedUrl"/>
+            <input [(ngModel)]="feedName" placeholder="Type your feed name..." name="feedName" />
+            <input  [(ngModel)]="feedUrl" placeholder="Copy your RSS url..." name="feedUrl" />
             <button>Add feed</button>
         </form>
     </section>
