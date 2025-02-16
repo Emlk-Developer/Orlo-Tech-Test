@@ -43,38 +43,16 @@ export class AppComponent {
   categorySelection: string[] | undefined;
   @Input()
   rssFeedsInCategorySelection: FeedsType[] | undefined;
-
-
-
-  //Sidebar
-  /* I imagine the sidebar functions need to be moved to this parent app level
-   in order to apply the filtered categories to the feed but I cant think of the logic on how to do this
-   Duplication of code from side-bar.components.ts
-   */
-
   @Input()
   filteredCategories: string[] | undefined
+
  
-  _filteredValue: string = '';
-
-  get filteredValue() {
-    return this._filteredValue;
-  }
-
-  set filteredValue(value: string) {
-    this._filteredValue = value;
-    this.filteredCategories = this.filteredFeed(value);
-    console.log(this.rssFeedsInCategorySelection)
-  }
-
-  filteredFeed(filteredText: string) {
-    if (this.filteredCategories?.length == 0 || filteredText.length <= 1 ) {
-      return this.categorySelection;
+  onValueEntered(value: string) {
+    if (this.rssFeedsInCategorySelection?.length == 0 || value.length <= 1 ) {
+      this.rssFeedsInCategorySelection = this.rssFeeds?.filter((feed) => this.categorySelection?.includes(feed.categories[0]));
     } else {
-      return this.filteredCategories?.filter((category: string) => category.toLocaleLowerCase() === filteredText.toLocaleLowerCase())
+    this.rssFeedsInCategorySelection = this.rssFeeds?.filter((feed) => value.toLocaleLowerCase() === feed.categories[0].toLocaleLowerCase());
     }
   }
-
-
 
 }

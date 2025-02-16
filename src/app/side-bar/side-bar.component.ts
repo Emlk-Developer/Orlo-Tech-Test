@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CategoriesType } from '../model/category';
 
@@ -19,6 +19,8 @@ export class SideBarComponent {
   filteredCategories: string[] | undefined;
   @Input()
   newCategoryFeeds: CategoriesType | undefined;
+  @Output()
+  inputValue = new EventEmitter<string>()
  
   _filteredValue: string = '';
   _feedName: string = '';
@@ -30,6 +32,7 @@ export class SideBarComponent {
 
   set filteredValue(value: string) {
     this._filteredValue = value;
+    this.inputValue.emit(value);
     this.filteredCategories = this.filteredFeed(value);
   }
 

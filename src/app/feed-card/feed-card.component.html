@@ -1,7 +1,7 @@
 
 <section>
-    <div class="feed-wrapper">
-        <div *ngFor="let feed of rssFeedsInCategorySelection; let i = index" class="feed">
+    <div class="feed-wrapper" >
+        <div *ngFor="let feed of rssFeedsInCategorySelection; let i = index" class="feed" [ngClass]="resizeCardClasses()">
             <div class="feed-header"><h3><a href="{{feed.link}}">{{feed.categories[0]}}</a></h3><span>{{feed.pubDate | date :'MMM dd yyyy | h:mm'}}</span></div>
             <img src="https://picsum.photos/id/{{i+30}}/300/200" />
             <div class="feed-content">

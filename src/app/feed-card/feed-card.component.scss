@@ -8,6 +8,10 @@
         background-color: #fff;
         height: fit-content;
 
+        &.max-size {
+            width: 350px;
+        }
+
         .feed-header {
             display: flex;
             justify-content: space-between;

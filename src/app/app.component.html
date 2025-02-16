@@ -2,7 +2,11 @@
     <app-side-bar 
         [categorySelection]="categorySelection" 
         [filteredCategories]="filteredCategories" 
+        (inputValue)="onValueEntered($event)"
     >
     </app-side-bar>
-    <app-feed-card [rssFeedsInCategorySelection]="rssFeedsInCategorySelection" ></app-feed-card>
+    <app-feed-card 
+    [rssFeedsInCategorySelection]="rssFeedsInCategorySelection" 
+    >
+</app-feed-card>
 </main>
